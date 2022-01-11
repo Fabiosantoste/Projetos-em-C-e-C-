@@ -1,3 +1,6 @@
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
@@ -87,7 +90,41 @@ void comprarPassagens() {
      printf("###############################\n");
 
      printf("-------------------------------\n");
-     printf("insira seu destino:");
+     printf("Digite seu destino:");
+     scanf("%s",nomeDestino);
+     printf("-------------------------------\n");
+    
+     for (i = 0; i < qtdVoo; i++){
+
+
+
+        auxValidacao = 0;
+        qtdVoo = 0;
+        nomeDestino[0] = '\0';
+
+    //while (strlen(nomeDestino) == 0){ 
+
+    do
+    {
+
+            if (auxValidacao == 0)
+            {
+                printf("Informe seu destino:%d: ", i + 1 );
+                auxValidacao = 1;
+            }
+            else
+            {
+                printf("O local de destino não pode estar vazio: ", i + 1 );
+            }
+            gets(nomeDestino);
+            fflush(stdin);
+
+
+         }
+
+
+      }
+    while (strlen(nomeDestino) == 0)
 
 
 
