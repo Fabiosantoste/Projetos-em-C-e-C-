@@ -1,0 +1,97 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <conio.h>
+#include <ctype.h>
+#include <stdbool.h>
+#include <string.h>
+
+#define RED "\x
+1b[91m"
+#define GREEN "\x1b[32m"
+#define BLUE "\x1b[34m"
+#define RESET "\x1b[0m"
+
+
+
+int main()
+{
+    system("chcp 65001");
+    setlocale(LC_ALL, "pt_BR.UTF-8");
+    system("CLS");
+
+   structs 
+
+
+ 
+    void definirReserva ();
+    void cancelarReservas();
+    void comprarPassagens();
+
+   {
+
+       int valor;
+
+        printf(RED "#######################################\n" RESET);
+        printf(RED "#  Bem vindo a Salumar linhas aereas  #\n" RESET);
+        printf(RED "#######################################\n" RESET);
+
+        printf("=================================\n");
+        printf("#    Escolha o que voce deseja  #\n");
+        printf("=================================\n");
+        printf(GREEN "# [1]    Compra de passagens    #\n" RESET);
+        printf("=================================\n");
+        printf(GREEN "# [2]         Reservas          #\n" RESET);
+        printf("=================================\n");
+        printf(GREEN "# [3]       Cancelamentos       #\n" RESET);
+        printf("=================================\n");
+
+        scanf("%d", &valor);
+        system("cls"); 
+
+        switch (valor)
+        {
+
+            case 1:
+
+                 comprarPassagens();
+                 break;
+
+            case 2:
+
+                 comprarPassagens();
+                 break;
+
+
+            case 3:
+
+                 comprarPassagens();
+                 break;
+
+            default : 
+            printf("Por favor insira um valor valido!");
+
+        }
+         getch(); 
+
+     }
+       return 0;
+    }
+
+
+void comprarPassagens() {
+
+
+     printf("###############################\n");
+     printf("#     Compra de passagens     #\n");
+     printf("###############################\n");
+
+     printf("-------------------------------\n");
+     printf("insira seu destino:");
+
+
+
+
+
+
+     }
