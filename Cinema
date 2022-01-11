@@ -1,0 +1,99 @@
+while (qtdPessoa < Destino) //enquanto a quantidade de pessoas for menor que 10
+		{ 
+	    	if (qtdPessoa)
+			{//Se a quantidade tiver sido informada, exibir nova menssagem
+	    		printf("Por favor, informe no minimo %d pessoas que assistiram o filme da sessao %d: ", QTMINPESSOA, i + 1);//alerta o usuario o valor minimo de pessoas
+			}
+			else
+			{
+				printf("Informe a quantidade de pessoas que assistiram o filme da sessao %d: ", i + 1);//solicita a quantidade de pessoas que assistiram ao filme referente a sessão
+			}
+	        scanf("%d", &qtdPessoa);//reconhecer a pergunta e associar as sessões 
+	        fflush(stdin);// limpar o buffer de memoria 
+	    }
+		
+		if (i == 0)//fornece a informação de que i e = a 0  
+		{
+			qtdPessoaI = qtdPessoa;//relaciona a quantidade de pessoas da sessão 1 
+		}
+		else
+		{
+			qtdPessoaII = qtdPessoa;//relaciona a quantidade de pessoas da sessão 2
+		}
+		
+		for (j = 0; j < qtdPessoa; j++) //vai aumentando a unidade ate chegar na quantidade de pessoas referente 
+		{
+			auxValidacao = 0;
+			do
+			{
+				if (auxValidacao == 0) {
+					printf("Informe o sexo da pessoa %d: ", j + 1);//Solicita o sexo da pessoa 
+					auxValidacao = 1;
+				}
+				else
+				{
+					printf("Por favor, informe um sexo (F ou M) valido para a pessoa %d: ", j + 1);//alerta o usuario sobre o valor fornecido referente ao sexo
+				}
+				scanf("%s", &sexo);//reconhecer a pergunta e associar ao sexo 
+				fflush(stdin);// limpar o buffer de memoria 
+				
+			}
+			while(strcmp ("M", sexo) != 0 && strcmp ("F", sexo) != 0);//Apenas ira aceitar quando o valor fornecido for M ou F  
+			
+			if (i == 0) {
+				if (strcmp ("M", sexo) == 0) {//predetermina a contagem de M referente a sessão 1  
+					qtSexoMasI++;//contabiliza a quantidade de pessoas referente ao sexo masculino da sessão 1
+				}
+				else
+				{
+					qtSexoFemI++;//contabiliza a quantidade de pessoas referente ao sexo feminino da sessão 1
+				}
+			}
+			else
+			{
+				if (strcmp ("M", sexo) == 0) {//predetermina a contagem de M referente a sessão 2
+					qtSexoMasII++;//contabiliza a quantidade de pessoas referente ao sexo masculino da sessão 2
+				}
+				else
+				{
+					qtSexoFemII++;//contabiliza a quantidade de pessoas referente ao sexo feminino da sessão 2
+				}
+			}
+			
+			auxValidacao = 0;
+			do
+			{
+				if (auxValidacao == 0) {
+					printf("Informe a idade da pessoa %d: ", j + 1);//solicita a idade da pessoa 
+					auxValidacao = 1;
+				}
+				else
+				{
+					printf("Por favor, informe uma idade entre 3 e 100 anos para a pessoa %d: ", j + 1);//Alerta que há uma idade minima e uma idade maxima 
+				}
+				scanf("%d", &idade);//reconhecer a pergunta e associar as sessões 
+				
+				system("cls");//ira limpar a quantidade de mensagens apresentada na tela 
+			}
+			while(idade < 3 || idade > 100);//aceita apenas valores entre 3 e 100
+
+			if (i == 0)
+			{
+				if (idade > 2 && idade <= 13)//associa o valor >= a 3 e <= a 13 referente as crianças
+				{
+					qtCriancaI++;//contabiliza a quantidade de crianças referente a sessão 1 
+				}
+				else if (idade > 13 && idade <= 17 )//associa o valor >= a 14 e <= a 17 referente aos adolescentes
+				{
+					qtAdolescenteI++;//contabiliza a quantidade de adolescentes referente a sessão 1 		
+				}
+				else if (idade > 17 && idade <= 64)//associa o valor >= a 18 e <= a 64 referente aos adultos
+				{
+					qtAdultoI++;//contabiliza a quantidade de adultos referente a sessão 1
+				}
+				else if (idade > 64)//associa o valor >= 64 referente aos idosos
+				{
+					qtIdosoI++;//contabiliza a quantidade de idoso referente a sessão 1
+				}
+
+			}
